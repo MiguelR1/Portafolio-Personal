@@ -6,12 +6,12 @@ import { ServiceComponent } from './pages/service/service.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full'  },
   { path: 'home', component: HomeComponent },
   { path: 'portafolio', component: PortafolioComponent },
   { path: 'service', component: ServiceComponent },
   { path: 'contact', component: ContactComponent },
-  { path: '**', redirectTo: 'home' }
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
