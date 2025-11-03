@@ -2,6 +2,7 @@
   --bg-color: beige;
   --hover-button: rgb(48, 48, 48);
   --secondary-color:#f14545;
+  --app-nav-height: 72px; /* ajusta al valor real de tu app-nav */
 }
 
 body {
@@ -126,7 +127,10 @@ a:hover{
 
 
 .redes-sociales{
-  margin-top: 20px !important;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
 }
 
 .correoCopy{
@@ -170,11 +174,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .show {
   display: block;
-}
-
-.redes-sociales{
-  margin: 10px;
-  margin-bottom: 0px !important;
 }
 
 .rButton{
@@ -758,3 +757,75 @@ nav ul{
 }
 
 
+nav.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--app-nav-height);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  background: var(--bg-color);
+  /* background: rgba(255,255,255,0.9);  <-- descomentar si necesita fondo */
+}
+
+/* wrapper que ocupa el área visible debajo del nav fijo y centra su contenido */
+.home-centered {
+  --nav-h: var(--app-nav-height, 72px);
+
+  position: fixed;      /* ocupa área visible restante sin añadir altura extra */
+  top: var(--nav-h);    /* empieza justo debajo del nav fijo */
+  left: 0;
+  right: 0;
+  bottom: 0;            /* se extiende hasta el bottom del viewport */
+
+  display: flex;
+  flex-direction: column; /* column: foto + info arriba, redes abajo */
+  align-items: center;
+  justify-content: center; /* centra verticalmente ambos bloques */
+
+  gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  overflow-y: auto; /* scroll interno si el contenido sobrepasa */
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* asegura que el contenido quede debajo del nav fijo */
+.service-page {
+  padding-top: var(--app-nav-height, 72px); /* evita solapamiento con nav */
+  box-sizing: border-box;
+}
+
+/* contenedor central para el texto "Acerca de mi" */
+.acerca-container {
+  width: 80%;
+  max-width: 1000px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* estilo para los párrafos bajo el título */
+.acercaText {
+  margin: 0 0 1rem 0; /* espacio entre párrafos */
+  line-height: 1.6;
+  font-size: 1rem;
+  color: rgba(48,48,48,0.95);
+  text-align: center; /* usa 'justify' si prefieres bloques justificados */
+}
+
+/* responsive: en pantallas pequeñas estrecha y reduce letra */
+@media (max-width: 720px) {
+  .acerca-container {
+    width: 92%;
+  }
+  .acercaText {
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+}
+
+/* ...existing code... */

@@ -9,47 +9,54 @@
   <app-nav></app-nav>
 
 
+  <div class="home-centered">
 
-  <div class="container-principal">
+    <div class="container-principal">
 
-    <div class="foto-principal">
-      <img src="../assets/foto-principal/web.jpg" alt="" style="border-radius: 50%;" class="fotoPerfil">
-    </div>
-
-
-    <div class="info-principal">
-
-      <div class="preText">
-        <h3 class="hi">Hi!!!</h3>
-        <h1 class="mb-5" style="margin-top: 40px;">I'm <b>Miguel</b> Rodríguez</h1>
+      <div class="foto-principal">
+        <img src="../assets/foto-principal/web.png" alt="" style="border-radius: 50%;" class="fotoPerfil">
       </div>
 
-      <div class="text-center divpPre" style="width: 70%;">
-        <p class="mb-4 pPre">Soy técnico superior universitario en Informática y desarrollador Front-End principalmente enfocado en Angular, apasionado por el diseño web y la   programación.</p>
-      </div>
 
-      <div class="d-flex justify-content-around align-items-center mt-4 butInput">
+      <div class="info-principal">
 
-        <a href="" class="ms-2 cva"><button class="cvb ms-2" style="background: none;">Descargar CV</button></a>
-
-        <div class="d-flex correoInp">
-        <input class="correoCopy" type="text" value="{{correo}}" aria-label="readonly input example" readonly>
-
-        <button class="btnCopy" type="button" id="button-addon2" (click)="copy()" [disabled]="copiado" matTooltip="{{copyMensaje}}"
-        matTooltipPosition="above">
-
-        <i class="p-1" [ngClass]="{'fa-solid fa-check' : copiado, 'fa-regular fa-copy' : !copiado}"></i>
-        </button>
+        <div class="preText">
+          <h3 class="hi">Hi!!!</h3>
+          <h1 class="mb-5" style="margin-top: 40px;">I'm <b>Miguel</b> Rodríguez</h1>
         </div>
+
+        <div class="text-center divpPre" style="width: 70%;">
+          <p class="mb-4 pPre">Soy ingenierio en Informática y desarrollador Front-End principalmente enfocado en Angular, apasionado por el diseño web y la programación.</p>
+        </div>
+
+        <div class="d-flex justify-content-around align-items-center mt-4 butInput">
+
+          <a href="assets/MRCV.pdf" download="MRCV.pdf" class="ms-2 cva"><button class="cvb ms-2" style="background: none;">Descargar CV</button></a>
+
+          <div class="d-flex correoInp">
+          <input class="correoCopy" type="text" value="{{correo}}" aria-label="readonly input example" readonly>
+
+          <button class="btnCopy" type="button" id="button-addon2" (click)="copy()" [disabled]="copiado" matTooltip="{{copyMensaje}}"
+          matTooltipPosition="above">
+
+          <i class="p-1" [ngClass]="{'fa-solid fa-check' : copiado, 'fa-regular fa-copy' : !copiado}"></i>
+          </button>
+          </div>
+        </div>
+
       </div>
 
     </div>
-
   </div>
 
   <div class="redes-sociales pb-3">
-    <i class="fa-brands fa-linkedin fa-2xl rButton" ></i>
-    <i class="fa-brands fa-github fa-2xl rButton" ></i>
+    <a href="https://www.linkedin.com/in/miguelrodriguezdev/">
+        <i class="fa-brands fa-linkedin fa-2xl rButton"></i>
+    </a>
+
+    <a href="https://github.com/MiguelR1">
+      <i class="fa-brands fa-github fa-2xl rButton"></i>
+    </a>
   </div>
 
 </body>
