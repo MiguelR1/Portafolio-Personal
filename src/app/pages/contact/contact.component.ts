@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ContactComponent {
 
   public numero: string = '+58 4241258686';
-  public email:string = 'miguel.arp.2003@gmail.com';
+  public email:string = 'miguel20rodriguez02@gmail.com';
 
   copy(string:string){
     if (string == 'email') {
